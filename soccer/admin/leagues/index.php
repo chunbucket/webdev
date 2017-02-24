@@ -23,7 +23,7 @@ if ($action == NULL) {
 
 switch ($action) {
     case 'list':
-        loadCoachListPage();
+        loadLeagueListPage();
         break;
 
 

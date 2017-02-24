@@ -41,12 +41,12 @@
 
             <?php foreach ($teamList as $team) {
                 $team_id = $team['team_id'];
-                $team_name = $team['team_name'];
+                $name = $team['name'];
                 ?>
                 <div class="row">
                     <div class="wrapper">
                         <div class="clickable" onclick="javascript:location.href='./index.php?team_id=<?php echo $team_id ?>&action=show_modify_team'">
-                            <div class="cell widecol"><?php echo $team_name; ?>&nbsp</div>
+                            <div class="cell widecol"><?php echo $name; ?>&nbsp</div>
                         </div>
                         <div class="cell delcol">
                             <div class="del_icon" onclick="deleteTeam(<?php echo $team_id; ?>);">d</div>

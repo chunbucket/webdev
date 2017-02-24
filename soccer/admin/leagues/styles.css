@@ -51,7 +51,7 @@ a:hover, a:active {
 }
 
 .widecol{
-    width: 23%;
+    width: 90%;
 }
 
 .delcol{
@@ -62,8 +62,8 @@ a:hover, a:active {
 
 .navbar {
     height: 5.2em;
-    width:85%;
-    min-width:70em;
+    width:20%;
+    min-width:30em;
     line-height: 5.2em;
     margin: 0 auto;
     padding: 0 0 0 20px;
@@ -79,8 +79,8 @@ a:hover, a:active {
 }
 .list-container {
     height: auto;
-    width: 85%;
-    min-width: 70em;
+    width: 20%;
+    min-width: 30em;
     margin: 0 auto;
     padding: 0;
     background: rgba(253, 253, 253, 0.8);

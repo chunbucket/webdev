@@ -1,15 +1,17 @@
 <?php
 
 function get_team_list() {
-    $query = 'SELECT team_id, team_name
-              from team
-			  order by team_name';
+    $query = 'SELECT team_id, name, CONCAT(coach_last_name,",",coach_first_name), league_name
+              from team, coach, league
+              where coach.coach_id=team.coach_id 
+              and league.league_id = team.league_id
+			  order by name';
     return get_list($query);
 }
 
 function get_team($team_id) {
     global $db;
-    $query = 'select team_id, team_name
+    $query = 'select team_id, name
               from team 
               where team_id = :team_id';
 
@@ -27,15 +29,15 @@ function get_team($team_id) {
     }
 }
 
-function add_team($team_name) {
+function add_team($name) {
     global $db;
     $query = 'INSERT INTO team
-                 (team_name)
+                 (name)
               VALUES
-                 (:team_name)';
+                 (:name)';
     try {
         $statement = $db->prepare($query);
-        $statement->bindValue(':team_name', $team_name);
+        $statement->bindValue(':name', $name);
         $statement->execute();
         $statement->closeCursor();
     } catch (PDOException $e) {
@@ -45,14 +47,15 @@ function add_team($team_name) {
 }
 
 
-function modify_team($team_id, $team_name) {
+function modify_team($team_id, $name) {
     global $db;
     $query = 'update team set
-                 team_name = :team_name,
+                 name = :name,
                  where team_id = :team_id';
     try {
         $statement = $db->prepare($query);
-        $statement->bindValue(':team_name', $team_name);
+        $statement->bindValue(':name', $name);
+        $statement->bindValue(':team_id', $team_id);
         $statement->execute();
         $statement->closeCursor();
     } catch (PDOException $e) {

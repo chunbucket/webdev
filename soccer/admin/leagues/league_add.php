@@ -21,10 +21,9 @@
                 <input type="hidden" name="action" value="add_league">
 
                 <div class="row">
-                    <label>Last Name</label>
+                    <label>League Name</label>
                     <input type="text" name="league_name" autofocus required>
                 </div>
-
                 <div class="button-div">
                     <button style="cursor: pointer" class="submit s" type="submit" name="choice" value="Add">Submit</button>
                     <button style="cursor: pointer" class="submit b" type="submit" name="choice" value="Back" formnovalidate>Cancel</button>

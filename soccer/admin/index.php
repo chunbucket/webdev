@@ -41,13 +41,38 @@ switch ($action) {
         <table>
             <tr>
                 <td>
-                    <a href="Leagues">
+                    <a href="Coaches">
                         <div class="feature">
-                            <h2>Leagues</h2>
+                            <h2>Coaches</h2>
                             <h4>Manage the list of coaches</h4>
                         </div>
                     </a>
                 </td>
+                <td>
+                    <a href="Leagues">
+                        <div class="feature">
+                            <h2>Leagues</h2>
+                            <h4>Manage the list of leagues</h4>
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a href="Fields">
+                        <div class="feature">
+                            <h2>Fields</h2>
+                            <h4>Manage the list of fields</h4>
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <a href="Teams">
+                        <div class="feature">
+                            <h2>Teams</h2>
+                            <h4>Manage the list of teams</h4>
+                        </div>
+                    </a>
+                </td>
+                <tr>
                 <td>
                     <a href="roles">
                         <div class="feature">
@@ -64,6 +89,7 @@ switch ($action) {
                         </div>
                     </a>
                 </td>
+                </tr>
             </tr>
         </table>
     </div>

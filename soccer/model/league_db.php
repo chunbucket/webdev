@@ -53,6 +53,7 @@ function modify_league($league_id, $league_name) {
     try {
         $statement = $db->prepare($query);
         $statement->bindValue(':league_name', $league_name);
+        $statement->bindValue(':league_id', $league_id);
         $statement->execute();
         $statement->closeCursor();
     } catch (PDOException $e) {

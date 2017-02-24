@@ -23,7 +23,7 @@
 
                 <div class="row">
                     <label>Team Name</label>
-                    <input type="text" name="team_name" value="<?php echo htmlspecialchars($team_name);?>" autofocus required>
+                    <input type="text" name="name" value="<?php echo htmlspecialchars($name);?>" autofocus required>
                 </div>
 
                 <div class="button-div">
