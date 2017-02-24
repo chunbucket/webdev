@@ -1,21 +1,21 @@
 <?php
 
-function get_league_list() {
-    $query = 'SELECT league_id, league_name
-              from league
-			  order by league_name';
+function get_team_list() {
+    $query = 'SELECT team_id, team_name
+              from team
+			  order by team_name';
     return get_list($query);
 }
 
-function get_league($league_id) {
+function get_team($team_id) {
     global $db;
-    $query = 'select league_id, league_name
-              from league 
-              where league_id = :league_id';
+    $query = 'select team_id, team_name
+              from team 
+              where team_id = :team_id';
 
     try {
         $statement = $db->prepare($query);
-        $statement->bindValue(':league_id', $league_id);
+        $statement->bindValue(':team_id', $team_id);
         $statement->execute();
         $result = $statement->fetch();
         $statement->closeCursor();
@@ -27,15 +27,15 @@ function get_league($league_id) {
     }
 }
 
-function add_league($league_name) {
+function add_team($team_name) {
     global $db;
-    $query = 'INSERT INTO league
-                 (league_name)
+    $query = 'INSERT INTO team
+                 (team_name)
               VALUES
-                 (:league_name)';
+                 (:team_name)';
     try {
         $statement = $db->prepare($query);
-        $statement->bindValue(':league_name', $league_name);
+        $statement->bindValue(':team_name', $team_name);
         $statement->execute();
         $statement->closeCursor();
     } catch (PDOException $e) {
@@ -45,14 +45,14 @@ function add_league($league_name) {
 }
 
 
-function modify_league($league_id, $league_name) {
+function modify_team($team_id, $team_name) {
     global $db;
-    $query = 'update league set
-                 league_name = :league_name,
-                 where league_id = :league_id';
+    $query = 'update team set
+                 team_name = :team_name,
+                 where team_id = :team_id';
     try {
         $statement = $db->prepare($query);
-        $statement->bindValue(':league_name', $league_name);
+        $statement->bindValue(':team_name', $team_name);
         $statement->execute();
         $statement->closeCursor();
     } catch (PDOException $e) {
@@ -62,13 +62,13 @@ function modify_league($league_id, $league_name) {
 }
 
 
-function delete_league($league_id){
+function delete_team($team_id){
     global $db;
-    $query = 'delete from league
-              where league_id = :league_id';
+    $query = 'delete from team
+              where team_id = :team_id';
     try {
         $statement = $db->prepare($query);
-        $statement->bindValue(':league_id', $league_id);
+        $statement->bindValue(':team_id', $team_id);
         $statement->execute();
         $statement->closeCursor();
     } catch (PDOException $e) {
