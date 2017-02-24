@@ -10,7 +10,7 @@
 $pageTitle = 'Soccer League';
 $loginInfo = '<h1>Soccer Database</h1>
                 <h2>
-                    Let's practice PHP by building an app. good one
+                    Let's practice PHP by building an app. good one testing testing one2 three
                 </h2>
 
 
