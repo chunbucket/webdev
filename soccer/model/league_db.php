@@ -1,21 +1,21 @@
 <?php
 
-function get_coach_list() {
-    $query = 'SELECT coach_id, coach_last_name, coach_first_name, coach_phone_nbr, coach_email
-              from coach
-			  order by coach_last_name, coach_first_name';
+function get_league_list() {
+    $query = 'SELECT league_id, league_name
+              from league
+			  order by league_name';
     return get_list($query);
 }
 
-function get_coach($coach_id) {
+function get_league($league_id) {
     global $db;
-    $query = 'select coach_id, coach_last_name, coach_first_name, coach_phone_nbr, coach_email
-              from coach 
-              where coach_id = :coach_id';
+    $query = 'select league_id, league_name
+              from league 
+              where league_id = :league_id';
 
     try {
         $statement = $db->prepare($query);
-        $statement->bindValue(':coach_id', $coach_id);
+        $statement->bindValue(':league_id', $league_id);
         $statement->execute();
         $result = $statement->fetch();
         $statement->closeCursor();
@@ -27,18 +27,15 @@ function get_coach($coach_id) {
     }
 }
 
-function add_coach($coach_last_name, $coach_first_name, $coach_phone_nbr, $coach_email) {
+function add_league($league_name) {
     global $db;
-    $query = 'INSERT INTO coach
-                 (coach_last_name, coach_first_name, coach_phone_nbr, coach_email)
+    $query = 'INSERT INTO league
+                 (league_name)
               VALUES
-                 (:coach_last_name, :coach_first_name, :coach_phone_nbr, :coach_email)';
+                 (:league_name)';
     try {
         $statement = $db->prepare($query);
-        $statement->bindValue(':coach_last_name', $coach_last_name);
-        $statement->bindValue(':coach_first_name', $coach_first_name);
-        $statement->bindValue(':coach_phone_nbr', $coach_phone_nbr);
-        $statement->bindValue(':coach_email', $coach_email);
+        $statement->bindValue(':league_name', $league_name);
         $statement->execute();
         $statement->closeCursor();
     } catch (PDOException $e) {
@@ -48,21 +45,14 @@ function add_coach($coach_last_name, $coach_first_name, $coach_phone_nbr, $coach
 }
 
 
-function modify_coach($coach_id, $coach_last_name, $coach_first_name, $coach_phone_nbr, $coach_email) {
+function modify_league($league_id, $league_name) {
     global $db;
-    $query = 'update coach set
-                 coach_last_name = :coach_last_name,
-                 coach_first_name = :coach_first_name,
-                 coach_phone_nbr = :coach_phone_nbr,
-                 coach_email = :coach_email
-                 where coach_id = :coach_id';
+    $query = 'update league set
+                 league_name = :league_name,
+                 where league_id = :league_id';
     try {
         $statement = $db->prepare($query);
-        $statement->bindValue(':coach_last_name', $coach_last_name);
-        $statement->bindValue(':coach_first_name', $coach_first_name);
-        $statement->bindValue(':coach_phone_nbr', $coach_phone_nbr);
-        $statement->bindValue(':coach_email', $coach_email);
-        $statement->bindValue(':coach_id', $coach_id);
+        $statement->bindValue(':league_name', $league_name);
         $statement->execute();
         $statement->closeCursor();
     } catch (PDOException $e) {
@@ -72,13 +62,13 @@ function modify_coach($coach_id, $coach_last_name, $coach_first_name, $coach_pho
 }
 
 
-function delete_coach($coach_id){
+function delete_league($league_id){
     global $db;
-    $query = 'delete from coach
-              where coach_id = :coach_id';
+    $query = 'delete from league
+              where league_id = :league_id';
     try {
         $statement = $db->prepare($query);
-        $statement->bindValue(':coach_id', $coach_id);
+        $statement->bindValue(':league_id', $league_id);
         $statement->execute();
         $statement->closeCursor();
     } catch (PDOException $e) {

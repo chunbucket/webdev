@@ -7,7 +7,7 @@ function loadCoachListPage() {
     global $coachList;
 
     $coachList = get_coach_list();
-    include 'team_list.php';
+    include 'field_list.php';
     exit();
 }
 
@@ -28,7 +28,7 @@ switch ($action) {
 
     case 'show_add_coach':
         $coach_name = '';
-        include 'team_add.php';
+        include 'field_add.php';
         exit();
         break;
 
@@ -53,7 +53,7 @@ switch ($action) {
         $coach_phone_nbr = $coach['coach_phone_nbr'];
         $coach_email = $coach['coach_email'];
 
-        include 'team_modify.php';
+        include 'field_modify.php';
         exit();
         break;
 
