@@ -1,7 +1,7 @@
 <?php
 
 require_once('../../util/main.php');
-require_once('../../model/coach_db.php');
+require_once('../../model/league_db.php');
 
 function loadLeagueListPage() {
     global $leagueList;

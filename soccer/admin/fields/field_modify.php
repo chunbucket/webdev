@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Modify Coach</title>
+    <title>Modify Field</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
@@ -12,33 +12,18 @@
 </head>
 <body>
 <form action="" method="post">
-    <input type="hidden" name="action" value="modify_coach">
+    <input type="hidden" name="action" value="modify_field">
     <div class="box">
         <div class="wrapper">
             <div class="columns">
-                <h1 class="title">Modify Coach</h1>
+                <h1 class="title">Modify Field</h1>
 
-                <input type="hidden" name="action" value="modify_coach">
-                <input type="hidden" name="coach_id" value="<?php echo htmlspecialchars($coach_id); ?>">
-
-                <div class="row">
-                    <label>Last Name</label>
-                    <input type="text" name="coach_last_name" value="<?php echo htmlspecialchars($coach_last_name);?>" autofocus required>
-                </div>
+                <input type="hidden" name="action" value="modify_field">
+                <input type="hidden" name="field_id" value="<?php echo htmlspecialchars($field_id); ?>">
 
                 <div class="row">
-                    <label>First Name</label>
-                    <input type="text" name="coach_first_name" value="<?php echo htmlspecialchars($coach_first_name);?>" required>
-                </div>
-
-                <div class="row">
-                    <label>Phone</label>
-                    <input type="text" name="coach_phone_nbr" value="<?php echo htmlspecialchars($coach_phone_nbr);?>">
-                </div>
-
-                <div class="row">
-                    <label>Email</label>
-                    <input type="text" name="coach_email" value="<?php echo htmlspecialchars($coach_email);?>">
+                    <label>Field Name</label>
+                    <input type="text" name="Field_name" value="<?php echo htmlspecialchars($field_name);?>" autofocus required>
                 </div>
 
                 <div class="button-div">

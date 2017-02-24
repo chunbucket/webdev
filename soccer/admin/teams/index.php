@@ -59,17 +59,14 @@ switch ($action) {
 
     case 'modify_coach':
         $choice = filter_input(INPUT_POST, 'choice');
-        $coach_last_name = filter_input(INPUT_POST, 'coach_last_name');
-        $coach_first_name = filter_input(INPUT_POST, 'coach_first_name');
-        $coach_phone_nbr = filter_input(INPUT_POST, 'coach_phone_nbr');
-        $coach_email = filter_input(INPUT_POST, 'coach_email');
+        $team_name = filter_input(INPUT_POST, 'coach_last_name');
         $coach_id = filter_input(INPUT_POST, 'coach_id');
 
         if(filter_input(INPUT_POST, 'choice') == "Modify") {
-            modify_coach($coach_id, $coach_last_name, $coach_first_name, $coach_phone_nbr, $coach_email);
+            modify_coach($coach_id, $team_name);
         }
 
-        loadCoachListPage();
+        loadTeamListPage();
         break;
 
     case 'delete_coach':

@@ -1,12 +1,12 @@
 <?php
 
 require_once('../../util/main.php');
-require_once('../../model/coach_db.php');
+require_once('../../model/field_db.php');
 
-function loadCoachListPage() {
-    global $coachList;
+function loadFieldListPage() {
+    global $fieldList;
 
-    $coachList = get_coach_list();
+    $fieldList = get_field_list();
     include 'field_list.php';
     exit();
 }
@@ -23,64 +23,53 @@ if ($action == NULL) {
 
 switch ($action) {
     case 'list':
-        loadCoachListPage();
+        loadfieldListPage();
         break;
 
-    case 'show_add_coach':
-        $coach_name = '';
+    case 'show_add_field':
+        $field_name = '';
         include 'field_add.php';
         exit();
         break;
 
-    case 'add_coach':
+    case 'add_field':
         $choice = filter_input(INPUT_POST, 'choice');
-        $coach_last_name = filter_input(INPUT_POST, 'coach_last_name');
-        $coach_first_name = filter_input(INPUT_POST, 'coach_first_name');
-        $coach_phone_nbr = filter_input(INPUT_POST, 'coach_phone_nbr');
-        $coach_email = filter_input(INPUT_POST, 'coach_email');
+        $field_name = filter_input(INPUT_POST, 'field_name');
 
         if ($choice == 'Add') {
-            add_coach($coach_last_name, $coach_first_name, $coach_phone_nbr, $coach_email);
+            add_field($field_name);
         }
-        loadCoachListPage();
+        loadfieldListPage();
         break;
 
-    case 'show_modify_coach';
-        $coach_id = filter_input(INPUT_GET, 'coach_id');
-        $coach = get_coach($coach_id);
-        $coach_last_name = $coach['coach_last_name'];
-        $coach_first_name = $coach['coach_first_name'];
-        $coach_phone_nbr = $coach['coach_phone_nbr'];
-        $coach_email = $coach['coach_email'];
-
+    case 'show_modify_field';
+        $field_id = filter_input(INPUT_GET, 'field_id');
+        $field = get_field($field_id);
+        $field_name = $field['field_name'];
         include 'field_modify.php';
         exit();
         break;
 
-    case 'modify_coach':
+    case 'modify_field':
         $choice = filter_input(INPUT_POST, 'choice');
-        $coach_last_name = filter_input(INPUT_POST, 'coach_last_name');
-        $coach_first_name = filter_input(INPUT_POST, 'coach_first_name');
-        $coach_phone_nbr = filter_input(INPUT_POST, 'coach_phone_nbr');
-        $coach_email = filter_input(INPUT_POST, 'coach_email');
-        $coach_id = filter_input(INPUT_POST, 'coach_id');
-
+        $field_name = filter_input(INPUT_POST, 'field_name');
+        $field_id = filter_input(INPUT_POST, 'field_id');
         if(filter_input(INPUT_POST, 'choice') == "Modify") {
-            modify_coach($coach_id, $coach_last_name, $coach_first_name, $coach_phone_nbr, $coach_email);
+            modify_field($field_id, $field_name);
         }
 
-        loadCoachListPage();
+        loadFieldListPage();
         break;
 
-    case 'delete_coach':
-        $coach_id = filter_input(INPUT_GET, 'coach_id');
-        delete_coach($coach_id);
+    case 'delete_field':
+        $field_id = filter_input(INPUT_GET, 'field_id');
+        delete_field($field_id);
 
-        loadCoachListPage();
+        loadFieldListPage();
         break;
 
     default:
-        display_error('Unknown coach action: ' . $action);
+        display_error('Unknown field action: ' . $action);
         break;
 }
 ?>
