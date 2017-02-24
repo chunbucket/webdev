@@ -10,8 +10,8 @@
 $pageTitle = 'Soccer League';
 $loginInfo = '<h1>Soccer Database</h1>
                 <h2>
-                    Let\'s practice PHP by building an app.
-                </h2>';
+                    Let's practice PHP by building an app. good one
+                </h2>
 
 
 /** Include the database credentials and then transfer control to /shared/index,
