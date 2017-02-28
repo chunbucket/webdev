@@ -18,8 +18,6 @@
             <div class="columns">
                 <h1 class="title">Add League</h1>
 
-                <input type="hidden" name="action" value="add_league">
-
                 <div class="row">
                     <label>League Name</label>
                     <input type="text" name="league_name" autofocus required>

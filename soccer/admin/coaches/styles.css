@@ -80,7 +80,7 @@ a:hover, a:active {
 .list-container {
     height: auto;
     width: 85%;
-    min-width: 70em;
+    min-width: 30em;
     margin: 0 auto;
     padding: 0;
     background: rgba(253, 253, 253, 0.8);

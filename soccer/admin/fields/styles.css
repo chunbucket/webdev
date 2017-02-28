@@ -62,7 +62,7 @@ a:hover, a:active {
 
 .navbar {
     height: 5.2em;
-    width:85%;
+    width:20%;
     min-width:70em;
     line-height: 5.2em;
     margin: 0 auto;
@@ -79,7 +79,7 @@ a:hover, a:active {
 }
 .list-container {
     height: auto;
-    width: 85%;
+    width: 20%;
     min-width: 70em;
     margin: 0 auto;
     padding: 0;

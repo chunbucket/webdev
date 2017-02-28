@@ -25,7 +25,20 @@ switch ($action) {
     case 'list':
         loadLeagueListPage();
         break;
+    case 'show_add_league':
+        $league_name = '';
+        include 'league_add.php';
+        exit();
+        break;
+    case 'add_league':
+        $choice = filter_input(INPUT_POST, 'choice');
+        $league_name = filter_input(INPUT_POST, 'league_name');
 
+        if ($choice == 'Add') {
+            add_league($league_name);
+        }
+        loadLeagueListPage();
+        break;
 
     default:
         display_error('Unknown league action: ' . $action);
