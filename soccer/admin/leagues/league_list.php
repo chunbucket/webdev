@@ -27,7 +27,8 @@
             <a href="index.php?action=show_add_league"
                 <button style="cursor: pointer" class="s">Add New</button>
             </a>
-            <a href="../index.php">
+            <a href="..
+            /index.php">
                 <button style="cursor: pointer" class="b">Back</button>
             </a>
         </div>

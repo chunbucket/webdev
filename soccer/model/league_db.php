@@ -45,7 +45,6 @@ function modify_league($league_id, $league_name) {
     }
 }
 
-
 function delete_league($league_id){
     global $db;
     $query = 'delete from league
@@ -77,5 +76,8 @@ function add_league($league_name) {
         exit();
     }
 }
+
+
+
 
 ?>

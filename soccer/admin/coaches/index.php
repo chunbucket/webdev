@@ -75,7 +75,6 @@ switch ($action) {
     case 'delete_coach':
         $coach_id = filter_input(INPUT_GET, 'coach_id');
         delete_coach($coach_id);
-
         loadCoachListPage();
         break;
 

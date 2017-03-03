@@ -39,7 +39,31 @@ switch ($action) {
         }
         loadLeagueListPage();
         break;
+    case 'delete_league':
+        $league_id = filter_input(INPUT_GET, 'league_id');
+        delete_league($league_id);
+        loadLeagueListPage();
+        break;
+    case 'show_modify_league':
+        $league_id = filter_input(INPUT_POST, 'league_id');
+        $league = get_league ($league_id);
+        $league_name = $league['league_name'];
 
+        include 'league_modify.php';
+        exit();
+        break;
+
+    case 'modify_league':
+        $choice = filter_input(INPUT_POST, 'choice');
+        $league_id = filter_input(INPUT_POST, 'league_id');
+        $league_name = filter_input(INPUT_POST, 'league_name');
+
+        if(filter_input(INPUT_POST, 'choice') == "Modify") {
+            modify_league($league_id, $league_name);
+        }
+
+        loadLeagueListPage();
+        break;
     default:
         display_error('Unknown league action: ' . $action);
         break;
