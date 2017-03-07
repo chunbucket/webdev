@@ -22,8 +22,8 @@
 
                 <div class="row">
                     <label>Team Name</label>
-                    <input type="text" name="team_name" autofocus required>
-                </div>
+                    <input type="text" name="name" autofocus required>
+                </div>m
 
                 <div class="button-div">
                     <button style="cursor: pointer" class="submit s" type="submit" name="choice" value="Add">Submit</button>

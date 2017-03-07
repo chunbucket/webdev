@@ -27,38 +27,35 @@ switch ($action) {
         break;
 
     case 'show_add_team':
-        $team_name = '';
+        $name = '';
         include 'team_add.php';
         exit();
         break;
 
     case 'add_team':
         $choice = filter_input(INPUT_POST, 'choice');
-        $team_name = filter_input(INPUT_POST, 'team_name');
+        $name = filter_input(INPUT_POST, 'name');
 
         if ($choice == 'Add') {
-            add_team($team_name);
+            add_team($name);
         }
-        loadteamListPage();
+        loadTeamListPage();
         break;
 
     case 'show_modify_team';
         $team_id = filter_input(INPUT_GET, 'team_id');
         $team = get_team($team_id);
-        $team_name = $team['team_name'];
-        
-
+        $name = $team['name'];
         include 'team_modify.php';
         exit();
         break;
 
     case 'modify_team':
         $choice = filter_input(INPUT_POST, 'choice');
-        $team_name = filter_input(INPUT_POST, 'team_name');
+        $name = filter_input(INPUT_POST, 'name');
         $team_id = filter_input(INPUT_POST, 'team_id');
-
         if(filter_input(INPUT_POST, 'choice') == "Modify") {
-            modify_team($team_id, $team_name);
+            modify_team($team_id, $name);
         }
 
         loadTeamListPage();

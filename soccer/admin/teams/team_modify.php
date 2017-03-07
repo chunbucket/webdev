@@ -22,7 +22,7 @@
                 <input type="hidden" name="team_id" value="<?php echo htmlspecialchars($team_id); ?>">
 
                 <div class="row">
-                    <label>Team Name</label>
+                    <label>team Name</label>
                     <input type="text" name="name" value="<?php echo htmlspecialchars($name);?>" autofocus required>
                 </div>
 

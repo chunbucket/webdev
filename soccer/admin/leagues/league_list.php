@@ -24,11 +24,10 @@
             <h1 class="title">Leagues</h1>
         </header>
         <div style="text-align:center;padding-bottom:2vh;">
-            <a href="index.php?action=show_add_league"
+            <a href="index.php?action=show_add_league">
                 <button style="cursor: pointer" class="s">Add New</button>
             </a>
-            <a href="..
-            /index.php">
+            <a href="../index.php">
                 <button style="cursor: pointer" class="b">Back</button>
             </a>
         </div>

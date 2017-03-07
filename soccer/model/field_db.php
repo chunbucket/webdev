@@ -48,7 +48,7 @@ function add_field($field_name) {
 function modify_field($field_id, $field_name) {
     global $db;
     $query = 'update field set
-                 field_name = :field_name,
+                 field_name = :field_name
                  where field_id = :field_id';
     try {
         $statement = $db->prepare($query);
