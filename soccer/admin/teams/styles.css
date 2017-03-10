@@ -50,20 +50,24 @@ a:hover, a:active {
     text-align: left;
 }
 
+.idcol{
+    width: 17%;
+}
+
 .widecol{
-    width: 90%;
+    width: 25%;
 }
 
 .delcol{
-    width: 8%;
+    width: 7%;
     text-align: center;
     display: inline-block;
     font-family: "bca-icons";}
 
 .navbar {
     height: 5.2em;
-    width: 20%;
-    min-width: 10em;
+    width:60%;
+    min-width:70em;
     line-height: 5.2em;
     margin: 0 auto;
     padding: 0 0 0 20px;
@@ -79,8 +83,8 @@ a:hover, a:active {
 }
 .list-container {
     height: auto;
-    width: 20%;
-    min-width: 10em;
+    width: 60%;
+    min-width: 70em;
     margin: 0 auto;
     padding: 0;
     background: rgba(253, 253, 253, 0.8);

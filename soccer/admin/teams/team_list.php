@@ -24,7 +24,7 @@
     <h1 class="title">Teams</h1>
 </header>
 <div style="text-align:center;padding-bottom:2vh;">
-    <a href="index.php?action=show_add_team">
+    <a href="./index.php?action=show_add_team">
         <button style="cursor: pointer" class="s">Add New</button>
     </a>
     <a href="../index.php">
@@ -32,7 +32,11 @@
     </a>
 </div>
 <nav class="navbar" style="">
+    <div class="cell idcol">Team ID</div>
     <div class="cell widecol">Team Name</div>
+    <div class="cell widecol">Coach</div>
+    <div class="cell widecol">League</div>
+    <div class="cell delcol"></div>
 </nav>
 
 
@@ -40,12 +44,17 @@
 
     <?php foreach ($teamList as $team) {
         $team_id = $team['team_id'];
-        $name = $team['name'];
+        $team_name = $team['name'];
+        $coach = $team['coach'];
+        $league = $team['league_name'];
         ?>
         <div class="row">
             <div class="wrapper">
                 <div class="clickable" onclick="javascript:location.href='./index.php?team_id=<?php echo $team_id ?>&action=show_modify_team'">
-                    <div class="cell widecol"><?php echo $name; ?>&nbsp</div>
+                    <div class="cell idcol"><?php echo $team_id; ?>&nbsp</div>
+                    <div class="cell widecol"><?php echo $team_name; ?>&nbsp</div>
+                    <div class="cell widecol"><?php echo $coach; ?>&nbsp</div>
+                    <div class="cell widecol"><?php echo $league; ?>&nbsp</div>
                 </div>
                 <div class="cell delcol">
                     <div class="del_icon" onclick="deleteTeam(<?php echo $team_id; ?>);">d</div>

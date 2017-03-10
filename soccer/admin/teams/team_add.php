@@ -23,7 +23,31 @@
                 <div class="row">
                     <label>Team Name</label>
                     <input type="text" name="name" autofocus required>
-                </div>m
+                </div>
+                
+                <div class ="row">
+                    <label>League</label>
+                    <select name ="league_id" required> 
+                        <option value="">Select a league</option>
+
+                        <?php foreach ($leagueList as $league){ ?>
+                            <option value="<?php echo $league['league_id']?>"><?php echo $league['league_name']?></option>
+                        <?php }?>
+                    </select>
+                </div>
+                <div class ="row">
+                    <label>Coach</label>
+                    <select name ="coach_id" required>
+                        <option value="">Select a coach</option>
+
+                        <?php foreach ($coachList as $coach){ ?>
+                            <option value="<?php echo $coach['coach_id']?>"><?php echo $coach['name']?></option>
+                        <?php }?>
+                    </select>
+                </div>
+             
+                
+                
 
                 <div class="button-div">
                     <button style="cursor: pointer" class="submit s" type="submit" name="choice" value="Add">Submit</button>
